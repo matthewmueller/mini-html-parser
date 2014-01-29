@@ -80,7 +80,7 @@ var dom = parser.parse();
 
 ## This library won't parse X...
 
-This is not a full-blown XML parser. It's error handling is minimal and is best suited for well-formed HTML. For more information read this: http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454
+This is not a full-blown XML parser. It's error handling is minimal and is best suited for well-formed HTML. For more information read this: http://stackoverflow.com/a/1732454/376773
 
 ## Credits
 
