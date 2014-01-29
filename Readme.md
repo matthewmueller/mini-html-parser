@@ -70,12 +70,6 @@ var dom = parser.parse();
 }
 ```
 
-### Parser#advance()
-
-You can also move forward step by step. Obtaining each token along the way:
-
-```
-
 ## TODO
 
 - handle other node types (doctype, etc.)
