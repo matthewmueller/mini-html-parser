@@ -13,6 +13,9 @@
 
     $ component install matthewmueller/mini-html-parser
 
+  Development: `16kb`
+  Minified + gzipped: `4kb`
+
 ## Example
 
 ```js
