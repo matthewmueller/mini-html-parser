@@ -14,6 +14,9 @@ function comment(value) {
   return {
     nodeType: 8,
     nodeValue: value,
-    nodeName: '#comment'
+    nextSibling: null,
+    nodeName: '#comment',
+    previousSibling: null,
+    parentNode: parent || null
   };
 }

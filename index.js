@@ -140,6 +140,10 @@ Parser.prototype.comment = function() {
     this.skip(captures);
     var node = nodes.comment(captures[1]);
     debug('<!-- %s -->', captures[1]);
+
+    // connect it to the DOM
+    this.connect(node);
+
     return 'comment';
   }
 
@@ -162,12 +166,7 @@ Parser.prototype.starttag = function() {
     debug('<%s>', name)
 
     // connect it to the DOM
-    this.tree.push(node);
-    var prev = this.tree[this.tree.length - 1];
-    if (prev) {
-      prev.nextSibling = node;
-      node.previousSibling = prev;
-    }
+    this.connect(node);
 
     // handle self-closing tags
     // and special tags that can
@@ -220,8 +219,8 @@ Parser.prototype.text = function() {
     var node = nodes.text(captures[0], this.parent);
     debug(node.nodeValue);
 
-    // add it to the DOM
-    this.tree.push(node);
+    // connect it to the DOM
+    this.connect(node);
 
     return 'text';
   }
@@ -252,6 +251,26 @@ Parser.prototype.special = function(node) {
 
   return node;
 };
+
+/**
+ * Connect the DOM tree
+ *
+ * @param {Object} node
+ * @return {Parser}
+ * @api private
+ */
+
+Parser.prototype.connect = function(node) {
+  this.tree.push(node);
+
+  var prev = this.tree[this.tree.length - 1];
+  if (prev) {
+    prev.nextSibling = node;
+    node.previousSibling = prev;
+  }
+
+  return this;
+}
 
 /**
  * Handle errors

@@ -15,6 +15,8 @@ function text(value, parent) {
     nodeType: 3,
     nodeValue: value,
     nodeName: '#text',
+    nextSibling: null,
+    previousSibling: null,
     parentNode: parent || null
   };
 }
