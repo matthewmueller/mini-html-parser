@@ -8,6 +8,8 @@ module.exports = element;
  * Create `element` node
  *
  * @param {String} tag
+ * @param {Object|null} attrs
+ * @param {Object|null} parent
  */
 
 function element(tag, attrs, parent) {

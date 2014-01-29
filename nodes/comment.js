@@ -8,9 +8,10 @@ module.exports = comment;
  * Create `comment` node
  *
  * @param {String} value
+ * @param {Object|null} parent
  */
 
-function comment(value) {
+function comment(value, parent) {
   return {
     nodeType: 8,
     nodeValue: value,

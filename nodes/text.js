@@ -8,6 +8,7 @@ module.exports = text;
  * Create `text` node
  *
  * @param {String} tag
+ * @param {Object|null} parent
  */
 
 function text(value, parent) {

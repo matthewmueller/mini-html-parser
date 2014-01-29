@@ -138,7 +138,7 @@ Parser.prototype.comment = function() {
   var captures;
   if (captures = rcomment.exec(this.html)) {
     this.skip(captures);
-    var node = nodes.comment(captures[1]);
+    var node = nodes.comment(captures[1], this.parent);
     debug('<!-- %s -->', captures[1]);
 
     // connect it to the DOM
