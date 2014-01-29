@@ -78,6 +78,10 @@ var dom = parser.parse();
 - handle other node types (doctype, etc.)
 - benchmark
 
+## This library won't parse X...
+
+This is not a full-blown XML parser. It's error handling is minimal and is best suited for well-formed HTML. For more information read this: http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454
+
 ## Credits
 
 A lot of the regular expressions and inspiration came from John Resig's [Pure Javascript HTML Parser](http://ejohn.org/blog/pure-javascript-html-parser/).
