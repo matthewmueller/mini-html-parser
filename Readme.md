@@ -65,11 +65,11 @@ var dom = parser.parse();
 ```
 {
   nodeName: '#comment',
+  nodeType: 8,
+  nodeValue: '...',
   previousSibling: ...,
   nextSibling: ...,
-  nodeValue: '...',
-  parentNode: ...,
-  nodeType: 8,
+  parentNode: ...
 }
 ```
 
