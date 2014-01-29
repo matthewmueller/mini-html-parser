@@ -36,7 +36,7 @@ var dom = parser.parse();
 
 #### element:
 
-```json
+```
 {
   nodeName: 'A',
   nodeType: 1,
@@ -49,7 +49,7 @@ var dom = parser.parse();
 
 #### text:
 
-```json
+```
 {
   nodeName: '#text',
   nodeType: 3,
@@ -62,7 +62,7 @@ var dom = parser.parse();
 
 #### comment:
 
-```json
+```
 {
   nodeName: '#comment',
   previousSibling: ...,
