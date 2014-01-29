@@ -1,14 +1,19 @@
 {
-  "name": "html-parser",
-  "repo": "matthewmueller/html-parser",
-  "description": "html parser for webworkers",
+  "name": "mini-html-parser",
+  "repo": "matthewmueller/mini-html-parser",
+  "description": "mini html parser for webworkers & node",
   "version": "0.0.1",
-  "keywords": [],
-  "dependencies": {},
+  "keywords": ["html", "parser"],
+  "dependencies": {
+    "visionmedia/debug": "0.7.4"
+  },
   "development": {},
   "license": "MIT",
   "main": "index.js",
   "scripts": [
-    "index.js"
+    "index.js",
+    "nodes/comment.js",
+    "nodes/element.js",
+    "nodes/text.js"
   ]
 }
