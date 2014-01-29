@@ -9,7 +9,7 @@
 
     npm install mini-html-parser
 
-  In the browser (with [component(1)](http://component.io)):
+  In the browser (with [component](http://component.io)):
 
     $ component install matthewmueller/mini-html-parser
 
