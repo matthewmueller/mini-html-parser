@@ -1,0 +1,7 @@
+{
+  "name": "mini-html-parser",
+  "version": "0.0.1",
+  "dependencies": {
+    "debug": "~0.7.4"
+  }
+}

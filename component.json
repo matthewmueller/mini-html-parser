@@ -1,0 +1,14 @@
+{
+  "name": "html-parser",
+  "repo": "matthewmueller/html-parser",
+  "description": "html parser for webworkers",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
