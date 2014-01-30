@@ -7,14 +7,13 @@ module.exports = fragment;
 /**
  * Create `fragment` node
  *
- * @param {Array} children
  * @return {Object} fragment
  */
 
-function fragment(children) {
+function fragment() {
   return {
     nodeType: 11,
-    childNodes: children,
+    childNodes: [],
     parentNode: null,
     nextSibling: null,
     previousSibling: null,

@@ -69,9 +69,9 @@ function Parser(html) {
   if ('string' != typeof html) throw new TypeError('String expected');
   this.html = this.original = html;
   this.tokens = [];
-  this.root = this.tree = [];
+  this.parent = this.root = nodes.fragment();
+  this.tree = this.parent.childNodes;
   this.err = null;
-  this.parent = null;
 }
 
 /**
@@ -85,11 +85,13 @@ Parser.prototype.parse = function() {
   while (!this.err && this.advance() != 'eos');
   if (this.err) return this.err;
 
+  var children = this.root.childNodes;
+
   // one element
-  if (1 == this.root.length) return this.root[0];
+  if (1 == children.length) return children[0];
 
   // several elements
-  return nodes.fragment(this.root);
+  return this.root;
 }
 
 /**
@@ -205,9 +207,8 @@ Parser.prototype.endtag = function() {
     debug('</%s>', captures[1]);
 
     // move up a level
-    if (!this.parent) return this.error('No end tag for <' + captures[1] + '>.');
     this.parent = this.parent.parentNode;
-    this.tree = (this.parent) ? this.parent.childNodes : this.root;
+    this.tree = this.parent.childNodes;
 
     return 'end-tag';
   }
@@ -269,9 +270,19 @@ Parser.prototype.special = function(node) {
  */
 
 Parser.prototype.connect = function(node) {
+  // fetch the previous DOM node
+  var prev = this.tree[this.tree.length - 1];
+
+  // first child
+  if (!this.tree.length) this.parent.firstChild = node;
+
+  // add node to DOM tree
   this.tree.push(node);
 
-  var prev = this.tree[this.tree.length - 1];
+  // last child
+  this.parent.lastChild = node;
+
+  // set previous and next siblings
   if (prev) {
     prev.nextSibling = node;
     node.previousSibling = prev;
