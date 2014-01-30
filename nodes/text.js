@@ -14,6 +14,7 @@ module.exports = text;
 function text(value, parent) {
   return {
     nodeType: 3,
+    childNodes: [],
     nodeValue: value,
     nodeName: '#text',
     nextSibling: null,
