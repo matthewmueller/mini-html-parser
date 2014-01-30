@@ -13,7 +13,7 @@ module.exports = fragment;
 
 function fragment(children) {
   return {
-    nodeType: 1,
+    nodeType: 11,
     childNodes: children,
     parentNode: null,
     nextSibling: null,
