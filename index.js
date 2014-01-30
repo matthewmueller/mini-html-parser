@@ -15,6 +15,7 @@ exports = module.exports = Parser;
  */
 
 var nodes = exports.nodes = {
+  fragment : require('./nodes/fragment'),
   comment : require('./nodes/comment'),
   element : require('./nodes/element'),
   text : require('./nodes/text')
@@ -65,6 +66,7 @@ for (var tag in special) rspecial[tag] = new RegExp('<\/' + tag + '[^>]*>', 'i')
 
 function Parser(html) {
   if (!(this instanceof Parser)) return new Parser(html);
+  if ('string' != typeof html) throw new TypeError('String expected');
   this.html = this.original = html;
   this.tokens = [];
   this.root = this.tree = [];
@@ -81,7 +83,13 @@ function Parser(html) {
 
 Parser.prototype.parse = function() {
   while (!this.err && this.advance() != 'eos');
-  return this.err ? this.err : this.root;
+  if (this.err) return this.err;
+
+  // one element
+  if (1 == this.roots.length) return this.root[0];
+
+  // several elements
+  return nodes.fragment(this.root);
 }
 
 /**
