@@ -86,7 +86,7 @@ Parser.prototype.parse = function() {
   if (this.err) return this.err;
 
   // one element
-  if (1 == this.roots.length) return this.root[0];
+  if (1 == this.root.length) return this.root[0];
 
   // several elements
   return nodes.fragment(this.root);
