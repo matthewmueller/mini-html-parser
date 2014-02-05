@@ -73,6 +73,20 @@ var dom = parser.parse();
 }
 ```
 
+#### document fragment:
+
+```
+{
+  nodeName: '#fragment',
+  nodeType: 11,
+  nodeValue: null,
+  childNodes: [...],
+  previousSibling: null,
+  nextSibling: null,
+  parentNode: null
+}
+```
+
 ## TODO
 
 - handle other node types (doctype, etc.)
