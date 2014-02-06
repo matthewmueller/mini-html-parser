@@ -2,8 +2,11 @@
   "name": "mini-html-parser",
   "repo": "matthewmueller/mini-html-parser",
   "description": "mini html parser for webworkers & node",
-  "version": "0.0.2",
-  "keywords": ["html", "parser"],
+  "version": "0.0.3",
+  "keywords": [
+    "html",
+    "parser"
+  ],
   "dependencies": {
     "visionmedia/debug": "0.7.4"
   },
