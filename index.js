@@ -88,7 +88,10 @@ Parser.prototype.parse = function() {
   var children = this.root.childNodes;
 
   // one element
-  if (1 == children.length) return children[0];
+  if (1 == children.length) {
+    children[0].parentNode = null;
+    return children[0];
+  }
 
   // several elements
   return this.root;
