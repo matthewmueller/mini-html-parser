@@ -1,4 +1,3 @@
-
 # mini-html-parser
 
   Mini html parser for webworkers / node. Parses and builds a simplified DOM tree in one go. Intended for well-formed HTML.
@@ -94,7 +93,7 @@ var dom = parser.parse();
 
 ## This library won't parse X...
 
-This is not a full-blown XML parser. It's error handling is minimal and is best suited for well-formed HTML. For more information read this: http://stackoverflow.com/a/1732454/376773
+This is not a full-blown XML parser. It's error handling is minimal and is best suited for well-formed HTML. It uses regex for it's matching, which can lead to errors. For more information on this topic read this: http://stackoverflow.com/a/1732454/376773
 
 ## Credits
 
